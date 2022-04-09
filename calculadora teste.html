@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculadora teste.html">
+</head>
+<body>
+    <input id="ipt_tonelada" placeholder="Peso total na carga Kg: 0.00">
+    <input id="ipt_valor" placeholder="valor da carga: R$ 0.00">
+    <button onclick="calcular()">Calcular o seu lucro sem os nossos serviços</button>
+    <button onclick="lucro()">Calcular o seu lucro com os nossos serviços</button>
+    <button onclick="diferenca()">Valor dos lucros</button>
+    <span id="span_calculadora"></span>
+</body>
+</html>
+<script>
+
+    function calcular() {
+       
+         ax_num1 = ipt_tonelada.value
+         ax_num2 = ipt_valor.value *0.50
+       
+
+        span_calculadora.innerHTML = '<br> <br>' + 'Peso total no transporte' + ' ' + ax_num1 + 'Kg' + '<br> <br>' + ' ' +
+        'valor da sua carga sem os nossos serviços. R$' +  '  '  + (ax_num2)
+
+    }
+
+    function lucro() {
+        
+        ax_num1 = ipt_tonelada.value
+        ax_num = ipt_valor.value *0.90
+
+        span_calculadora.innerHTML = '<br> <br>' + 'Peso total no transporte' + ' ' + ax_num1 + 'Kg ' + '<br> <br>' + ' ' +
+        'valor da sua carga com os nossos serviços. R$' +  ' '  + (ax_num) + ' '
+    }
+
+  function diferenca() {
+      
+    ax_num1 = ipt_valor.value *0.50
+    ax_num  = ipt_valor.value *0.90
+    var ax_result =  ax_num - ax_num1
+
+    span_calculadora.innerHTML =  '<br> <br>' + 'A sua margem de lucro com os nossos serviços é de. R$' + (ax_result)
+
+  }
+
+</script>
